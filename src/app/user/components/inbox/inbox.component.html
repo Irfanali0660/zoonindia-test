@@ -1,0 +1,22 @@
+<div class="mainpage">
+    <div>
+        
+        <div class="divitems">
+            <div>
+                <input type="search" placeholder="search" [(ngModel)]="searchData">
+                <p style="text-align: start;padding-left: 10px;">New Messages:{{unreadCount}}</p>               
+            </div>
+            
+            <div class="inputdata" *ngFor="let inboxmessage of inboxDatas|searchInbox:searchData">
+                <p (click)="sendData(inboxmessage)">{{inboxmessage.name}}</p>
+                <p *ngIf="inboxmessage.status; else status"><i class="fa-solid fa-check-double fa-xs" style="color: #59acff;"></i></p>
+                <ng-template #status>
+                    <i class="fa-solid fa-check-double fa-xs" style="color: #b0b0b0;"></i>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-singleinbox [inputDetails]="singleData"></app-singleinbox>
+    </div>
+</div>

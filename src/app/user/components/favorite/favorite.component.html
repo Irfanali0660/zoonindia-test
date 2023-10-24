@@ -1,0 +1,25 @@
+<div>
+    <div *ngIf="favorateDatas.length>0 else message">
+        <ul *ngFor="let singleData of favorateDatas">
+            <hr>
+            <div class="inboxDatas">
+                <div class="singleData">
+                    <p>{{singleData.name }}</p>
+                    <p>{{singleData.time | date}}</p>
+                </div>
+                <div>
+                    <button (click)="remove(singleData)">Remove</button>
+                </div>
+            </div>
+            <div>
+                <p>
+                    {{singleData.about}}
+                </p>
+            </div>
+            <hr>
+        </ul>
+    </div>
+    <ng-template #message>
+        <h2 style="text-align: center;">No favorateDatas</h2>
+    </ng-template>
+</div>

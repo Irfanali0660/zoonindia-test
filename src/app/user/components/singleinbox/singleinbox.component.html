@@ -1,0 +1,20 @@
+
+<div *ngIf="singleData else message">
+    <div style="margin: 5px;">
+        <button (click)="Delete(singleData)">Delete</button>
+        <button (click)="Addtofav(singleData)">Fav</button>
+    </div>
+    <div class="singleData">
+        <p>{{singleData.name }}</p>
+        <p>{{singleData.time | date}}</p>
+
+    </div>
+    <div>
+        <p>
+            {{singleData.about}}
+        </p>
+    </div>
+</div>
+<ng-template #message>
+    <h2 style="text-align: center;">singleData component</h2>
+</ng-template>

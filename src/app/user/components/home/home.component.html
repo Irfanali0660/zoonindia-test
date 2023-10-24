@@ -1,0 +1,15 @@
+<div class="mainpage">
+    <div>
+        <div class="divitems">
+            <a routerLink="/inbox" routerLinkActive="active">Inbox</a>
+            <a routerLink="send" routerLinkActive="active">Send</a>
+            <a routerLink="fav" routerLinkActive="active">Fav</a>
+        </div>
+    </div>
+    <div>
+        <div *ngIf="!isRouteActive" class="routerNotActive">
+            <h2>Home working</h2>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
